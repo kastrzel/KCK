@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<aiml version="1.0">
+
+<meta name="author" content="Yagira"/>
+<meta name="language" content="pl"/>
+
+<category>
+<pattern>DZIEŃ DOBRY</pattern>
+<template><random>
+            <li>Witam! W czym mogę pomóc?</li>
+            <li>Dzień dobry, w czym mogę pomóc?</li>
+         </random>
+</template>
+</category>
+
+<category>
+<pattern>WITAM</pattern>
+<template>
+<srai>DZIEŃ DOBRY</srai> 
+</template>
+</category>
+
+<category>
+<pattern>SIEMA</pattern>
+<template><random>
+            <li>Nie jesteśmy kolegami.</li>
+            <li>Mało odpowiednie powitanie.</li>
+         </random>
+</template>
+</category>
+
+<category>
+<pattern>ELO</pattern>
+<template>
+<srai>SIEMA</srai> 
+</template>
+</category>
+
+<category>
+<pattern>ELO *</pattern>
+<template>
+<srai>SIEMA</srai> 
+</template>
+</category>
+
+<category>
+<pattern>SIEMA *</pattern>
+<template>
+<srai>SIEMA</srai> 
+</template>
+</category>
+
+<category>
+<pattern>_ SIEMA</pattern>
+<template>
+<srai>SIEMA</srai> 
+</template>
+</category>
+
+<category>
+<pattern>_ ELO</pattern>
+<template>
+<srai>SIEMA</srai> 
+</template>
+</category>
+
+<category>
+<pattern>_ SIEMA *</pattern>
+<template>
+<srai>SIEMA</srai> 
+</template>
+</category>
+
+<category>
+<pattern>_ ELO *</pattern>
+<template>
+<srai>SIEMA</srai> 
+</template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<template><random>
+            <li>Chyba nie zrozumiałem.</li>
+            <li>Możesz powtórzyć?.</li>
+         </random>
+</template>
+</category>
+
+</aiml>
