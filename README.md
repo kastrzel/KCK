@@ -1,9 +1,13 @@
 # Projekt KCK - Automatyczny kelner
 
 **Wykorzystanie**
+
 **Python3: https://www.python.org/downloads/release/python-352/**
+
 **PyAiml2: https://github.com/eric-cc-su/PyAiml2**
+
 **PyQt5: https://www.riverbankcomputing.com/software/pyqt/download5**
+
 
 Jak ktoś chce sprawdzić u siebie:
    1. Pobieramy https://github.com/huntersan9/Py3kAiml
