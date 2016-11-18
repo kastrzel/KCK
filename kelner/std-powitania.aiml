@@ -1,54 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <aiml version="2.0">
-
-<meta name="author" content="Yagira"/>
-<meta name="language" content="pl"/>
-
-<category>
-<pattern>DZIEŃ DOBRY</pattern>
-<template><random>
-            <li>Witam! W czym mogę pomóc?</li>
-            <li>Dzień dobry, w czym mogę pomóc?</li>
-         </random>
-</template>
-</category>
-
-<category>
-<pattern>DZIEN DOBRY</pattern>
-<template>
-<srai>DZIEŃ DOBRY</srai> 
-</template>
-</category>
-
-<category>
-<pattern>WITAM</pattern>
-<template>
-<srai>DZIEŃ DOBRY</srai> 
-</template>
-</category>
-
-<category>
-<pattern><set>test</set></pattern>
-    <template><random>
+    <meta name="author" content="Yagira"/>
+    <meta name="language" content="pl"/>
+    <category>
+        <pattern>DZIEŃ DOBRY</pattern>
+        <template>
+            <random>
+                <li>Witam! W czym mogę pomóc?</li>
+                <li>Dzień dobry, w czym mogę pomóc?</li>
+            </random>
+        </template>
+    </category>
+    <category>
+        <pattern>DZIEN DOBRY</pattern>
+        <template>
+            <srai>DZIEŃ DOBRY</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>WITAM</pattern>
+        <template>
+            <srai>DZIEŃ DOBRY</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>
+            <set>test</set>
+        </pattern>
+        <template>
+            <random>
                 <li>Nie jesteśmy kolegami.</li>
                 <li>Mało odpowiednie powitanie.</li>
             </random>
-    </template>
-</category>
-
-<category>
-<pattern>_ <set>test</set></pattern>
-<template>
-<srai><star index="2"/></srai>
-</template>
-</category>
-
-<category>
-<pattern><set>test</set> *</pattern>
-<template>
-<srai><star index="1"/></srai>
-</template>
-</category>
-
+        </template>
+    </category>
+    <category>
+        <pattern>_ 
+            <set>test</set>
+        </pattern>
+        <template>
+            <srai>
+                <star index="2"/>
+            </srai>
+        </template>
+    </category>
+    <category>
+        <pattern>
+            <set>test</set> *
+        </pattern>
+        <template>
+            <srai>
+                <star index="1"/>
+            </srai>
+        </template>
+    </category>
 </aiml>

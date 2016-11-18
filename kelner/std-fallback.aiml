@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <aiml version="2.0">
-
-<meta name="author" content="Yagira"/>
-<meta name="language" content="pl"/>
-
-<category>
-<pattern>*</pattern>
-    <template>
-    <condition name = "plec" value = "m">
-            <random>
-                <li>Chyba pana nie zrozumiałem.</li>
-                <li>Czy mogłby pan powtórzyć?</li>
-            </random>
-    </condition>
-    <condition name = "plec" value = "k">
-            <random>
-                <li>Chyba pani nie zrozumiałem.</li>
-                <li>Czy mogłaby pani powtórzyć?</li>
-            </random>
-    </condition>
-    </template>
-</category>
-
+    <meta name="author" content="Yagira"/>
+    <meta name="language" content="pl"/>
+    <category>
+        <pattern>*</pattern>
+        <template>
+            <condition name = "plec" value = "m">
+                <random>
+                    <li>Chyba Pana nie zrozumiałam.</li>
+                    <li>Czy mogłby pan powtórzyć?</li>
+                </random>
+            </condition>
+            <condition name = "plec" value = "k">
+                <random>
+                    <li>Chyba Pani nie zrozumiałam.</li>
+                    <li>Czy mogłaby pani powtórzyć?</li>
+                </random>
+            </condition>
+        </template>
+    </category>
 </aiml>
