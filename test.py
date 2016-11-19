@@ -5,9 +5,7 @@ from pydub import AudioSegment
 from pydub.playback import play
 from PyQt5 import QtWidgets, QtCore, QtGui
 
-#from tkinter import *
-#from PIL import ImageTk, Image
-
+debugMode = True
 
 class Window(QtWidgets.QWidget):
 
@@ -40,7 +38,7 @@ class Window(QtWidgets.QWidget):
         v_box.addLayout(h_box) # takie tam checkboxy
 
         self.setLayout(v_box)
-        self.setWindowTitle('Kelner v 0.0.1')
+        self.setWindowTitle('Kelner v 0.2-alpha')
 
         self.answer.setMargin(0)
         self.answer.setIndent(0)
@@ -61,30 +59,37 @@ class Window(QtWidgets.QWidget):
         self.show()
 
     def btn_click(self):
-        sentence = self.textInput.text()
-
+        sentence = self.textInput.text().replace("ą","a").replace("ć","c").replace("ę","e").replace("ł","l").replace("ń","n").replace("ó","o").replace("ś","s").replace("ż","z").replace("ź","z")
+        #sentence = ''.join( c for c in sentence if c not in 'ąćęłńóśżź')
+        if debugMode:
+            print("Question: " + sentence)
         if self.isFemale.isChecked():
             k.setPredicate("plec", "k")
         else:
             k.setPredicate("plec", "m")
 
-        if self.isFemale.isChecked():
+        if self.isOrderComplete.isChecked():
             k.setPredicate("rachunek", "yes")
         else:
             k.setPredicate("rachunek", "no")
         
-        response = k.respond(sentence)
+        response = k.respond(sentence.strip(",."))
         self.answer.setText("Kelner: " + response)
         app.processEvents()
         if response:
             self.playsound(response)
 
+
+
+
     def playsound(self, response):
-        tts = gtts.gTTS(text=response, lang='pl')
+        response_strip=response.replace(",","").lower()
+        if debugMode:
+            print("TTS response: " + response_strip)
+        tts = gtts.gTTS(text=response_strip, lang='pl')
         tts.save("kelner.mp3")
         song = AudioSegment.from_mp3("kelner.mp3")
         play(song)
-
 
 
 k = aiml.Kernel()

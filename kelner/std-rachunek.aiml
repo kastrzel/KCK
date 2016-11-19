@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aiml version="2.0">
+    <meta name="author" content="Yagira"/>
+    <meta name="language" content="pl"/>
+
+    <category>
+        <pattern>RACHUNEK</pattern>
+        <template>
+            <condition name = "plec" value = "m">
+            <srai>RACHUNEKM</srai>
+            </condition>
+            <condition name = "plec" value = "k">
+            <srai>RACHUNEKK</srai>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>RACHUNEKM</pattern>
+        <template>
+            <condition name = "rachunek" value = "yes">
+            Proszę, oto Pana rachunek.
+            </condition>
+            <condition name = "rachunek" value = "no">
+            Jeszcze nic Pan nie zamówił.
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>RACHUNEKK</pattern>
+        <template>
+            <condition name = "rachunek" value = "yes">
+            Proszę oto Pani rachunek.
+            </condition>
+            <condition name = "rachunek" value = "no">
+            Jeszcze nic Pani nie zamówiła.
+            </condition>
+        </template>
+    </category>
+
+</aiml>

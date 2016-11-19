@@ -3,18 +3,12 @@
     <meta name="author" content="Yagira"/>
     <meta name="language" content="pl"/>
     <category>
-        <pattern>DZIEŃ DOBRY</pattern>
+        <pattern>DZIEN DOBRY</pattern>
         <template>
             <random>
                 <li>Witam! W czym mogę pomóc?</li>
                 <li>Dzień dobry, w czym mogę pomóc?</li>
             </random>
-        </template>
-    </category>
-    <category>
-        <pattern>DZIEN DOBRY</pattern>
-        <template>
-            <srai>DZIEŃ DOBRY</srai>
         </template>
     </category>
     <category>
