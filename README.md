@@ -11,7 +11,7 @@
 
 Uruchamianie:
 
-*1) Gotowy plik* **https://github.com/kastrzel/KCK/releases/tag/v0.1.0**
+*1) Gotowy plik* **https://github.com/kastrzel/KCK/releases/tag/v0.2-alpha**
    
 _**lub**_
 
