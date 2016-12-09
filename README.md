@@ -16,7 +16,7 @@ Uruchamianie:
 _**lub**_
 
 *2) Repozytorium:*
-   1. Pobieramy https://github.com/huntersan9/Py3kAiml
+   1. Pobieramy https://github.com/eric-cc-su/PyAiml2
    2. Wypakowujemy, przechodzimy do wypakowanego folderu za pomoca *cmd* lub *powershell* i używamy komendy ```python setup.py install```
    3. Instalujemy wymagane moduły: ```pip3 install pyqt5``` ```pip install pydub``` ```pip install pyaudio``` ```pip install gtts```
    4. Klonujemy repozytorium i uruchamiamy test.py.
