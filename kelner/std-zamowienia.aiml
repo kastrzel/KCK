@@ -2,8 +2,12 @@
 <aiml version="2.0">
     <meta name="author" content="Yagira"/>
     <meta name="language" content="pl"/>
+
     <category>
         <pattern>_ POLECI</pattern>
-        <template></template>
+        <template><random>
+        <li><srai>POLECZUPE</srai></li>
+        </random></template>
     </category>
+
 </aiml>
