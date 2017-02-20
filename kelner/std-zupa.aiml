@@ -135,6 +135,7 @@
     <category>
         <pattern>POLECA *</pattern>
         <template>
+        
             <srai>_ POLECA</srai>
         </template>
     </category>
