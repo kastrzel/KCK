@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aiml version="2.0">
+    <meta name="author" content="Yagira"/>
+    <meta name="language" content="pl"/>
+
+
+    <category>
+        <pattern>_ DANIE GLOWNE</pattern>
+        <template><srai>DANIE GLOWNE</srai></template>
+    </category>
+
+    <category>
+        <pattern>_ DANIE GLOWNE *</pattern>
+        <template><srai>DANIE GLOWNE <star index="2"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>DANIE GLOWNE</pattern>
+        <template>
+            <condition name = "plec" value = "m">
+                Na jakie danie główne ma Pan ochotę?
+            </condition>
+            <condition name = "plec" value = "k">
+                Na jakie danie główne ma Pani ochotę?
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>DANIE GLOWNE *</pattern>
+        <template>
+            <think><set name="danieglowne"><star index="1"/></set></think>
+            <condition name = "danieglowne">
+               <li value="kotlet schabowy"><set name="order">kotlet schabowy</set>, coś jeszcze?<think><set name="cena">12</set></think></li>
+               <li value="piers z kurczaka"><set name="order">piers z kurczaka</set>, coś jeszcze?<think><set name="cena">15</set></think></li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>NIE</pattern><that>DANIE GLOWNE * COŚ JESZCZE</that>
+        <template>
+            <random>
+                <li><think><set name="rachunek">yes</set></think><srai>RACHUNEK</srai></li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+    <pattern>_ POLECA</pattern><that>NA JAKIE DANIE GLOWNE MA * OCHOTĘ</that>
+    <template><srai>POLECDANIEGLOWNE</srai></template>
+    </category>
+
+    <category>
+    <pattern>_ POLECI</pattern><that>NA JAKIE DANIE GLOWNE MA * OCHOTĘ</that>
+    <template><srai>POLECDANIEGLOWNE</srai></template>
+    </category>
+
+    <category>
+    <pattern>_ POLECIC</pattern><that>NA JAKIE DANIE GLOWNE MA * OCHOTĘ</that>
+    <template><srai>POLECDANIEGLOWNE</srai></template>
+    </category>
+
+    <category>
+        <pattern>*</pattern><that>NA JAKIE DANIE GŁÓWNE MA * OCHOTĘ</that>
+        <template><srai>DANIE GLOWNE <star index="1"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>POLECDANIEGLOWNE</pattern>
+        <template>
+            <random>
+			<li>kotlet schabowy<think><set name="danieglowne">kotlet schabowy </set><set name="danie">danie glowne</set></think></li>
+			<li>piers z kurczaka<think><set name="danieglowne">piers z kurczaka</set><set name="danie">danie glowne</set></think></li>
+            </random>
+        </template>
+    </category>
+
+     <category>
+        <pattern>POPROSZE</pattern>
+        <template>
+        <condition name = "danie" value = "danie glowne">
+                <srai>DANIE GLOWNE <get name="danie glowne"/></srai>
+        </condition>
+        </template>
+    </category>
+    
+
+    <category>
+    <pattern>POLECA *</pattern>
+    <template><srai>_ POLECA</srai></template>
+    </category>
+
+    <category>
+    <pattern>POLECI *</pattern>
+    <template><srai>_ POLECI</srai></template>
+    </category>
+
+    <category>
+    <pattern>POLECIC *</pattern>
+    <template><srai>_ POLECIC</srai></template>
+    </category>
+
+    <category>
+    <pattern>_ POLECA *</pattern>
+    <template><srai>_ POLECA</srai></template>
+    </category>
+
+    <category>
+    <pattern> _ POLECI *</pattern>
+    <template><srai>_ POLECI</srai></template>
+    </category>
+
+    <category>
+    <pattern> _ POLECIC *</pattern>
+    <template><srai>_ POLECIC</srai></template>
+    </category>
+
+
+</aiml>
