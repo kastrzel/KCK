@@ -5,16 +5,22 @@
     <category>
         <pattern>DZIEN DOBRY</pattern>
         <template>
-            <random>
+            <condition name = "hello" value = "n">
+                <random>
                 <li>Witam! W czym mogę pomóc?</li>
                 <li>Dzień dobry, w czym mogę pomóc?</li>
-            </random>
+                </random>
+            </condition>
+            <condition name = "hello" value = "y">
+                Już się witaliśmy.
+            </condition>
+            <think><set name="hello">y</set></think>
         </template>
     </category>
     <category>
         <pattern>WITAM</pattern>
         <template>
-            <srai>DZIEŃ DOBRY</srai>
+            <srai>DZIEN DOBRY</srai>
         </template>
     </category>
     <category>

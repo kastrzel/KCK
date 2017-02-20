@@ -8,15 +8,45 @@
             <condition name = "plec" value = "m">
                 <random>
                     <li>Chyba Pana nie zrozumiałam.</li>
-                    <li>Czy mogłby pan powtórzyć?</li>
+                    <li>Czy mogłby Pan powtórzyć?</li>
+                    <li>Przepraszam ale nie rozumiem.</li>
                 </random>
             </condition>
             <condition name = "plec" value = "k">
                 <random>
                     <li>Chyba Pani nie zrozumiałam.</li>
-                    <li>Czy mogłaby pani powtórzyć?</li>
+                    <li>Czy mogłaby Pani powtórzyć?</li>
+                    <li>Przepraszam ale nie rozumiem.</li>
                 </random>
             </condition>
         </template>
+    </category>
+    <category>
+        <pattern>*</pattern><that>CHYBA PANA NIE ZROZUMIAŁAM</that>
+        <template>Nadal nie rozumiem.</template>
+    </category>
+    <category>
+        <pattern>*</pattern><that>CZY MÓGŁBY PAN POWTÓRZYĆ</that>
+        <template>Nadal nie rozumiem.</template>
+    </category>
+    <category>
+        <pattern>*</pattern><that>CHYBA PANI NIE ZROZUMIAŁAM</that>
+        <template>Nadal nie rozumiem.</template>
+    </category>
+    <category>
+        <pattern>*</pattern><that>CZY MOGŁABY PANI POWTÓRZYĆ</that>
+        <template>Nadal nie rozumiem.</template>
+    </category>
+    <category>
+        <pattern>*</pattern><that>PRZEPRASZAM ALE NIE ROZUMIEM</that>
+        <template>Nadal nie rozumiem.</template>
+    </category>
+    <category>
+        <pattern>*</pattern><that>NADAL NIE ROZUMIEM</that>
+        <template>Ja się poddaję.</template>
+    </category>
+    <category>
+        <pattern>*</pattern><that>JA SIĘ PODDAJĘ</that>
+        <template>Ja się poddaję.</template>
     </category>
 </aiml>

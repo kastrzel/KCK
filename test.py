@@ -25,7 +25,7 @@ class Window(QtWidgets.QWidget):
 
         self.textInput = QtWidgets.QLineEdit()
         self.textInput.setPlaceholderText("Co chcesz powiedzieć?")
-        self.textInput.setToolTip("Wpisz to co chcesz powiedzieć papieżowi.")
+        self.textInput.setToolTip("Wpisz to co chcesz powiedzieć kelnerce.")
         h_box = QtWidgets.QHBoxLayout()
         h_box.addWidget(self.isFemale) #kobieta
         h_box.addWidget(self.isOrderComplete) #rachunek
@@ -45,12 +45,15 @@ class Window(QtWidgets.QWidget):
 
         self.speak.clicked.connect(self.btn_click)
 
-        app_X = 250
-        app_Y = 250
-        screenGeo = QtWidgets.QDesktopWidget().screenGeometry()
+        #app_X = 250
+        #app_Y = 250
+        #screenGeo = QtWidgets.QDesktopWidget().screenGeometry().center()
 
-        # self.setGeometry((screenGeo.width() / 2) - (app_X / 2),
-        #(screenGeo.height() / 2) - (app_Y / 2))
+        #self.move((screenGeo.width() / 2) - (self.frameGeometry().width() / 4),(screenGeo.height() / 2) - (self.frameGeometry().height() / 2))
+        resolution = QtWidgets.QDesktopWidget().screenGeometry()
+        self.move((resolution.width() / 2) - (self.frameSize().width() / 4),
+                  (resolution.height() / 2) - (self.frameSize().height() / 2))
+
         self.answer.setAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignBottom)
         self.imagelabel.setAlignment(QtCore.Qt.AlignCenter)
         self.imagelabel.setPixmap(QtGui.QPixmap('kelner.png'))
@@ -76,8 +79,8 @@ class Window(QtWidgets.QWidget):
         response = k.respond(sentence.strip(",."))
         self.answer.setText("Kelner: " + response)
         app.processEvents()
-        if response:
-            self.playsound(response)
+        #if response:
+        #   self.playsound(response)
 
 
 
@@ -97,6 +100,26 @@ k.learn("std-startup.xml")
 k.respond("load aiml")
 k.loadSubs("sets/test.set")
 k.setPredicate("plec", "m")
+k.setPredicate("hello", "n")
+
+'''from bottle import route, run, static_file, view, url, template, request
+
+
+@route('/')
+def index():
+    return template('index', test=("tu pojawi sie odpowiedz"))
+
+@route('/', method='POST')
+def test():
+    question = request.forms.get('question')
+    return template('index', test=(request.forms.get('question')))
+
+@route('/static/:path#.+#', name='static')
+def static(path):
+    return static_file(path, root='static')
+
+run(host='localhost', port=8080, debug=True)'''
+
 
 app = QtWidgets.QApplication(sys.argv)
 a_window = Window()

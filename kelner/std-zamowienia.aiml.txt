@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aiml version="2.0">
+    <meta name="author" content="Yagira"/>
+    <meta name="language" content="pl"/>
+
+
+    <category>
+        <pattern>ZUPA</pattern>
+        <template><srai>ZUPA</srai></template>
+    </category>
+
+    <category>
+        <pattern>ZUPA</pattern>
+        <template>
+            <condition name = "plec" value = "m">
+                Na jaką zupę ma Pan ochotę?
+            </condition>
+            <condition name = "plec" value = "k">
+                Na jaką zupę ma Pani ochotę?
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>ZUPA *</pattern>
+        <template>
+        <think><set name="zupa"><star index="1"/></set></think>
+            <condition name = "zupa">
+               <li value="pomidorowa"><set name="order">Zupa pomidorowa</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
+               <li value="ogorkowa"><set name="order">Zupa ogórkowa</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
+               <li value="cebulowa"><set name="order">Zupa cebulowa</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>NIE</pattern><that>ZUPA * COŚ JESZCZE</that>
+        <template>
+            <random>
+                <li><srai>RACHUNEK</srai></li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+    <pattern>_ POLECA</pattern><that>NA JAKĄ ZUPĘ MA * OCHOTĘ</that>
+    <template><srai>POLEC</srai></template>
+    </category>
+
+    <category>
+    <pattern>_ POLECI</pattern><that>NA JAKĄ ZUPĘ MA * OCHOTĘ</that>
+    <template><srai>POLEC</srai></template>
+    </category>
+
+    <category>
+    <pattern>_ POLECIC</pattern><that>NA JAKĄ ZUPĘ MA * OCHOTĘ</that>
+    <template><srai>POLEC</srai></template>
+    </category>
+
+    <category>
+    <pattern>POLECA *</pattern><that>NA JAKĄ ZUPĘ MA * OCHOTĘ</that>
+    <template><srai>POLEC</srai></template>
+    </category>
+
+    <category>
+    <pattern>POLECI *</pattern><that>NA JAKĄ ZUPĘ MA * OCHOTĘ</that>
+    <template><srai>POLEC</srai></template>
+    </category>
+
+    <category>
+    <pattern>POLECIC *</pattern><that>NA JAKĄ ZUPĘ MA * OCHOTĘ</that>
+    <template><srai>POLEC</srai></template>
+    </category>
+
+    <category>
+    <pattern>_ POLECA *</pattern><that>NA JAKĄ ZUPĘ MA * OCHOTĘ</that>
+    <template><srai>POLEC</srai></template>
+    </category>
+
+    <category>
+    <pattern> _ POLECI *</pattern><that>NA JAKĄ ZUPĘ MA * OCHOTĘ</that>
+    <template><srai>POLEC</srai></template>
+    </category>
+
+    <category>
+    <pattern> _ POLECIC *</pattern><that>NA JAKĄ ZUPĘ MA * OCHOTĘ</that>
+    <template><srai>POLEC</srai></template>
+    </category>
+
+    <category>
+        <pattern>*</pattern><that>NA JAKĄ ZUPĘ MA * OCHOTĘ</that>
+        <template><srai>ZUPA <star index="1"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>POLEC</pattern>
+        <template>
+            <random>
+            <li>Pomidorową</li>
+            <li>Ogórkową</li>
+            <li>Cebulową</li>
+            </random>
+        </template>
+    </category>
+     <category>
+        <pattern>POPROSZE</pattern><that>POMIDOROWĄ</that>
+        <template>
+        <srai>ZUPA pomidorowa</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>POPROSZE</pattern><that>OGÓRKOWĄ</that>
+        <template>
+        <srai>ZUPA ogorkowa</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>POPROSZE</pattern><that>CEBULOWĄ</that>
+        <template>
+        <srai>ZUPA cebulowa</srai>
+        </template>
+    </category>
+     <category>
+        <pattern>_ POPROSZE</pattern><that>POMIDOROWĄ</that>
+        <template>
+        <srai>ZUPA pomidorowa</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>_ POPROSZE</pattern><that>OGÓRKOWĄ</that>
+        <template>
+        <srai>ZUPA ogorkowa</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>_ POPROSZE</pattern><that>CEBULOWĄ</that>
+        <template>
+        <srai>ZUPA cebulowa</srai>
+        </template>
+    </category>
+    
+</aiml>
