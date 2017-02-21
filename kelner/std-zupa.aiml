@@ -42,15 +42,6 @@
     </category>
 
     <category>
-        <pattern>NIE</pattern><that>ZUPA * COŚ JESZCZE</that>
-        <template>
-            <random>
-                <li><think><set name="rachunek">yes</set></think><srai>RACHUNEK</srai></li>
-            </random>
-        </template>
-    </category>
-
-    <category>
     <pattern>_ POLECA</pattern><that>NA JAKĄ ZUPĘ MA * OCHOTĘ</that>
     <template><srai>POLECZUPE</srai></template>
     </category>
@@ -65,7 +56,11 @@
     <template><srai>POLECZUPE</srai></template>
     </category>
 	
-	poprosze bla bla  
+	<category>
+        <pattern>POPROSZE *</pattern>
+        <template><srai>ZUPA <star index="1"/></srai></template>
+    </category>
+
     <category>
         <pattern>*</pattern><that>NA JAKĄ ZUPĘ MA * OCHOTĘ</that>
         <template><srai>ZUPA <star index="1"/></srai></template>
@@ -85,8 +80,12 @@
      <category>
         <pattern>POPROSZE</pattern>
         <template>
+        <condition name = "danie" value = "">
+                O co?
+        </condition>
         <condition name = "danie" value = "zupa">
                 <srai>ZUPA <get name="zupa"/></srai>
+                <set name="danie"/>
         </condition>
         </template>
     </category>

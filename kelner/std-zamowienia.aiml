@@ -10,4 +10,13 @@
         </random></template>
     </category>
 
+    <category>
+        <pattern>NIE</pattern><that>* COŚ JESZCZE</that>
+        <template>
+            <random>
+                <li><think><set name="rachunek">yes</set></think><srai>RACHUNEK</srai></li>
+            </random>
+        </template>
+    </category>
+
 </aiml>
