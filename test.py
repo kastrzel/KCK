@@ -100,6 +100,7 @@ k = aiml.Kernel()
 k.learn("std-startup.xml")
 k.respond("load aiml")
 k.loadSubs("sets/test.set")
+k.loadSubs("sets/zupy.set")
 k.setPredicate("plec", "m")
 k.setPredicate("hello", "n")
 

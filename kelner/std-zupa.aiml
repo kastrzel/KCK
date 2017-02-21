@@ -3,18 +3,47 @@
     <meta name="author" content="Yagira"/>
     <meta name="language" content="pl"/>
 
-
     <category>
         <pattern>_ ZUPE</pattern>
         <template><srai>ZUPA</srai></template>
     </category>
+
 	<category>
         <pattern>ZUPE *</pattern>
         <template><srai>ZUPA</srai></template>
     </category>
+
+    <category>
+        <pattern>ZUPA</pattern>
+        <template>
+            <condition name = "plec" value = "m">
+                Na jaką zupę ma Pan ochotę?
+            </condition>
+            <condition name = "plec" value = "k">
+                Na jaką zupę ma Pani ochotę?
+            </condition>
+        </template>
+    </category>
+
+
     <category>
         <pattern>_ ZUPE *</pattern>
         <template><srai>ZUPA <star index="2"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>_ ZUPA *</pattern>
+        <template><srai>ZUPA <star index="2"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>_ <set>zupy</set></pattern>
+        <template>ZUPA <star index="2"/></template>
+    </category>
+
+    <category>
+        <pattern><set>zupy</set> *</pattern>
+        <template>ZUPA <star index="1"/></template>
     </category>
 
     <category>
@@ -41,11 +70,6 @@
 			   <li value="barszcz"><set name="order">Barszcz</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
             </condition>
         </template>
-    </category>
-	
-	<category>
-        <pattern>POPROSZE *</pattern>
-        <template><srai>ZUPA <star index="1"/></srai></template>
     </category>
 
     <category>
