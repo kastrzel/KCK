@@ -5,7 +5,7 @@
 
 
     <category>
-        <pattern>_ DANIE GLOWNE</pattern>
+        <pattern>_ DANIE GLOWNE</pattern>   
         <template><srai>DANIE GLOWNE</srai></template>
     </category>
 
@@ -29,35 +29,29 @@
     <category>
         <pattern>DANIE GLOWNE *</pattern>
         <template>
-            <think><set name="danieglowne"><star index="1"/></set></think>
-            <condition name = "danieglowne">
-               <li value="kotlet schabowy"><set name="order">kotlet schabowy</set>, coś jeszcze?<think><set name="cena">12</set></think></li>
-               <li value="piers z kurczaka"><set name="order">piers z kurczaka</set>, coś jeszcze?<think><set name="cena">15</set></think></li>
+            <think><set name="glowne"><star index="1"/></set></think>
+            <condition name = "glowne">
+                <li value="schabowy"><set name="order">Schabowy z frytkami i buraczkami</set>, coś jeszcze?<think><set name="cena">17</set></think></li>
+                <li value="piers z kurczaka"><set name="order">Piers z kurczaka z ryżem i surówka</set>, coś jeszcze?<think><set name="cena">18</set></think></li>
+                <li value="golabki"><set name="order">Goląbki z ziemniakami</set>, coś jeszcze?<think><set name="cena">13</set></think></li>
+                <li value="kopytka"><set name="order">Kopytka z kapustą kiszoną</set>, coś jeszcze?<think><set name="cena">12</set></think></li>
+                <li value="klopsy"><set name="order">Klopsy w sosie pomidorowym z ryżem</set>, coś jeszcze?<think><set name="cena">15</set></think></li>
             </condition>
         </template>
     </category>
 
     <category>
-        <pattern>NIE</pattern><that>DANIE GLOWNE * COŚ JESZCZE</that>
-        <template>
-            <random>
-                <li><think><set name="rachunek">yes</set></think><srai>RACHUNEK</srai></li>
-            </random>
-        </template>
-    </category>
-
-    <category>
-    <pattern>_ POLECA</pattern><that>NA JAKIE DANIE GLOWNE MA * OCHOTĘ</that>
+    <pattern>_ POLECA</pattern><that>NA JAKIE DANIE GŁÓWNE MA * OCHOTĘ</that>
     <template><srai>POLECDANIEGLOWNE</srai></template>
     </category>
 
     <category>
-    <pattern>_ POLECI</pattern><that>NA JAKIE DANIE GLOWNE MA * OCHOTĘ</that>
+    <pattern>_ POLECI</pattern><that>NA JAKIE DANIE GŁÓWNE MA * OCHOTĘ</that>
     <template><srai>POLECDANIEGLOWNE</srai></template>
     </category>
 
     <category>
-    <pattern>_ POLECIC</pattern><that>NA JAKIE DANIE GLOWNE MA * OCHOTĘ</that>
+    <pattern>_ POLECIC</pattern><that>NA JAKIE DANIE GŁÓWNE MA * OCHOTĘ</that>
     <template><srai>POLECDANIEGLOWNE</srai></template>
     </category>
 
@@ -70,51 +64,12 @@
         <pattern>POLECDANIEGLOWNE</pattern>
         <template>
             <random>
-			<li>kotlet schabowy<think><set name="danieglowne">kotlet schabowy </set><set name="danie">danie glowne</set></think></li>
-			<li>piers z kurczaka<think><set name="danieglowne">piers z kurczaka</set><set name="danie">danie glowne</set></think></li>
+			<li>Schabowy z frytkami i buraczkami<think><set name="glowne">schabowy</set><set name="danie">glowne</set></think></li>
+			<li>Piers z kurczaka z ryżem i surówka<think><set name="glowne">piers z kurczaka</set><set name="danie">glowne</set></think></li>
+            <li>Goląbki z ziemniakami<think><set name="glowne">golabki</set><set name="danie">glowne</set></think></li>
+            <li>Kopytka z kapustą kiszoną<think><set name="glowne">kopytka</set><set name="danie">glowne</set></think></li>
+            <li>Klopsy w sosie pomidorowym z ryżem<think><set name="glowne">klopsy</set><set name="danie">glowne</set></think></li>
             </random>
         </template>
     </category>
-
-     <category>
-        <pattern>POPROSZE</pattern>
-        <template>
-        <condition name = "danie" value = "danie glowne">
-                <srai>DANIE GLOWNE <get name="danie glowne"/></srai>
-        </condition>
-        </template>
-    </category>
-    
-
-    <category>
-    <pattern>POLECA *</pattern>
-    <template><srai>_ POLECA</srai></template>
-    </category>
-
-    <category>
-    <pattern>POLECI *</pattern>
-    <template><srai>_ POLECI</srai></template>
-    </category>
-
-    <category>
-    <pattern>POLECIC *</pattern>
-    <template><srai>_ POLECIC</srai></template>
-    </category>
-
-    <category>
-    <pattern>_ POLECA *</pattern>
-    <template><srai>_ POLECA</srai></template>
-    </category>
-
-    <category>
-    <pattern> _ POLECI *</pattern>
-    <template><srai>_ POLECI</srai></template>
-    </category>
-
-    <category>
-    <pattern> _ POLECIC *</pattern>
-    <template><srai>_ POLECIC</srai></template>
-    </category>
-
-
 </aiml>

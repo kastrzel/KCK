@@ -18,9 +18,11 @@ class Window(QtWidgets.QWidget):
     def init_ui(self):
 
         # self.setFixedSize(250,220)
+        self.list = QtWidgets.QListWidget(self)
         self.speak = QtWidgets.QPushButton('Mów')
         self.answer = QtWidgets.QLabel('Tu pojawi sie odpowiedź.')
         self.imagelabel = QtWidgets.QLabel()
+        self.menulabel = QtWidgets.QLabel()
         self.isFemale = QtWidgets.QCheckBox("Kobieta")
         self.isOrderComplete = QtWidgets.QCheckBox("Zamówienie złożone")
 
@@ -31,15 +33,20 @@ class Window(QtWidgets.QWidget):
         h_box.addWidget(self.isFemale) #kobieta
         h_box.addWidget(self.isOrderComplete) #rachunek
 
+        main_box = QtWidgets.QHBoxLayout()
+        main_box.addWidget(self.menulabel)
+        main_box.addWidget(self.imagelabel)
+        main_box.addWidget(self.list)
+
         v_box = QtWidgets.QVBoxLayout()
-        v_box.addWidget(self.imagelabel)  # image
+        v_box.addLayout(main_box)  # image
         v_box.addWidget(self.answer)  # text
         v_box.addWidget(self.textInput)  # textinput
         v_box.addWidget(self.speak)  # button
         v_box.addLayout(h_box) # takie tam checkboxy
 
         self.setLayout(v_box)
-        self.setWindowTitle('Kelner v 0.2-alpha')
+        self.setWindowTitle('Kelner v 0.5')
 
         self.answer.setMargin(0)
         self.answer.setIndent(0)
@@ -58,6 +65,7 @@ class Window(QtWidgets.QWidget):
         self.answer.setAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignBottom)
         self.imagelabel.setAlignment(QtCore.Qt.AlignCenter)
         self.imagelabel.setPixmap(QtGui.QPixmap('kelner.png'))
+        self.menulabel.setPixmap(QtGui.QPixmap('menu.jpg'))
         # print(screen_X)
 
         self.show()
@@ -78,7 +86,15 @@ class Window(QtWidgets.QWidget):
             k.setPredicate("rachunek", "no")
         
         response = k.respond(sentence.strip(",."))
+        if debugMode:
+            print(response)
         self.answer.setText("Kelner: " + response)
+
+        if (k.getPredicate("order") != ""):
+            self.list.addItem(k.getPredicate("order") + " - " + k.getPredicate("cena") + "zł")
+            k.setPredicate("order", "")
+            k.setPredicate("cena", "")
+
         app.processEvents()
         #if response:
         #   self.playsound(response)
@@ -103,6 +119,8 @@ k.loadSubs("sets/test.set")
 k.loadSubs("sets/zupy.set")
 k.setPredicate("plec", "m")
 k.setPredicate("hello", "n")
+k.setPredicate("napoj", "no")
+k.setPredicate("danie", "")
 
 '''from bottle import route, run, static_file, view, url, template, request
 

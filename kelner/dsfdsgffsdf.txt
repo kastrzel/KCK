@@ -1,0 +1,54 @@
+
+    <category>
+    <pattern>_ WSZYSTKO</pattern>
+    <template><srai>NIE</srai></template>
+    </category>
+
+    <category>
+    <pattern>WSZYSTKO *</pattern>
+    <template><srai>NIE</srai></template>
+    </category>
+
+    <category>
+    <pattern>_ WSZYSTKO *</pattern>
+    <template><srai>NIE</srai></template>
+    </category>
+
+    <category>
+    <pattern>NIE *</pattern>
+    <template><srai>NIE</srai></template>
+    </category>
+
+    <category>
+        <pattern>NIE</pattern><that>* COŚ JESZCZE</that>
+        <template>
+            <condition name = "napoj" value = "no">
+                Podać coś do picia?<think><set name ="danie">napoj</set></think>
+            </condition>
+            <condition name = "napoj" value = "yes">
+                <think><set name="rachunek">yes</set></think><srai>RACHUNEK</srai>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+    <pattern>NIE</pattern><that>PODAĆ COŚ DO PICIA</that>
+    <template><think><set name = "napoj">yes</set><set name="rachunek">yes</set></think><srai>RACHUNEK</srai></template>
+    </category>
+
+    <category>
+        <pattern>POPROSZE</pattern>
+        <template>
+        <condition name = "danie" value = "">
+                O co?
+        </condition>
+        <condition name = "danie" value = "zupa">
+                <srai>ZUPA <get name="zupa"/></srai>
+                <set name="danie"/>
+        </condition>
+        <condition name = "danie" value = "glowne">
+                <srai>DANIE GLOWNE <get name="glowne"/></srai>
+                <set name="danie"/>
+        </condition>
+        </template>
+    </category>

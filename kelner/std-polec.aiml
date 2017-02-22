@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aiml version="2.0">
+    <meta name="author" content="Yagira"/>
+    <meta name="language" content="pl"/>
+    
+    <category>
+    <pattern>POLECA *</pattern>
+    <template><srai><star index="1"/> POLECA</srai></template>
+    </category>
+
+    <category>
+    <pattern>POLECI *</pattern>
+    <template><srai><star index="1"/> POLECI</srai></template>
+    </category>
+
+    <category>
+    <pattern>POLECIC *</pattern>
+    <template><srai><star index="1"/> POLECIC</srai></template>
+    </category>
+
+    <category>
+    <pattern> _ POLECA *</pattern>
+    <template><srai><star index="1"/> POLECA</srai></template>
+    </category>
+
+    <category>
+    <pattern> _ POLECI *</pattern>
+    <template><srai><star index="1"/> POLECI</srai></template>
+    </category>
+
+    <category>
+    <pattern> _ POLECIC *</pattern>
+    <template><srai><star index="1"/> POLECIC</srai></template>
+    </category>
+</aiml>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aiml version="2.0">
+    <meta name="author" content="Yagira"/>
+    <meta name="language" content="pl"/>
+
+    <category>
+        <pattern>_ PICIA</pattern>
+        <template><srai>PICIE</srai></template>
+    </category>
+
+	<category>
+        <pattern>PICIA *</pattern>
+        <template><srai>PICIE</srai></template>
+    </category>
+
+    <category>
+        <pattern>_ PICIA *</pattern>
+        <template><srai>PICIE <star index="2"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>_ PICIE *</pattern>
+        <template><srai>PICIE <star index="2"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>_ <set>picie</set></pattern>
+        <template><srai>PICIE <star index="2"/></srai></template>
+    </category>
+
+    <category>
+        <pattern><set>picie</set> *</pattern>
+        <template><srai>PICIE<star index="1"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>PICIE *</pattern>
+        <template>
+            <think><set name="picie"><star index="1"/></set></think>
+            <condition name = "picie">
+               <li value="sok jablkowy"><set name="order">sok jabłkowy</set>, coś jeszcze?<think><set name="cena">4</set></think></li>
+               <li value="sok pomaranczowy"><set name="order">sok pomarańczowy</set>, coś jeszcze?<think><set name="cena">4</set></think></li>
+               <li value="napoj pepsi"><set name="order">napój pepsi</set>, coś jeszcze?<think><set name="cena">4</set></think></li>
+               <li value="woda mineralna"><set name="order">woda mineralna</set>, coś jeszcze?<think><set name="cena">4</set></think></li>
+			   <li value="napoj sprite"><set name="order">napój sprite</set>, coś jeszcze?<think><set name="cena">4</set></think></li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>*</pattern><that>PODAĆ * COŚ DO PICIA</that>
+        <template><srai>PICIE <star index="1"/></srai></template>
+    </category>
+
+ 
+</aiml>

@@ -37,28 +37,6 @@
     </category>
 
     <category>
-        <pattern>_ <set>zupy</set></pattern>
-        <template>ZUPA <star index="2"/></template>
-    </category>
-
-    <category>
-        <pattern><set>zupy</set> *</pattern>
-        <template>ZUPA <star index="1"/></template>
-    </category>
-
-    <category>
-        <pattern>ZUPA</pattern>
-        <template>
-            <condition name = "plec" value = "m">
-                Na jaką zupę ma Pan ochotę?
-            </condition>
-            <condition name = "plec" value = "k">
-                Na jaką zupę ma Pani ochotę?
-            </condition>
-        </template>
-    </category>
-
-    <category>
         <pattern>ZUPA *</pattern>
         <template>
             <think><set name="zupa"><star index="1"/></set></think>
@@ -71,6 +49,7 @@
             </condition>
         </template>
     </category>
+
 
     <category>
         <pattern>*</pattern><that>NA JAKĄ ZUPĘ MA * OCHOTĘ</that>
