@@ -7,7 +7,7 @@ from pydub.playback import play
 from PyQt5 import QtWidgets, QtCore, QtGui
 
 debugMode = True
-
+rachunek = 0
 class Window(QtWidgets.QWidget):
 
     def __init__(self):
@@ -21,6 +21,7 @@ class Window(QtWidgets.QWidget):
         self.list = QtWidgets.QListWidget(self)
         self.speak = QtWidgets.QPushButton('Mów')
         self.answer = QtWidgets.QLabel('Tu pojawi sie odpowiedź.')
+        self.order = QtWidgets.QLabel('Zamówienie nie zostało jeszcze złozone.')
         self.imagelabel = QtWidgets.QLabel()
         self.menulabel = QtWidgets.QLabel()
         self.isFemale = QtWidgets.QCheckBox("Kobieta")
@@ -31,11 +32,10 @@ class Window(QtWidgets.QWidget):
         self.textInput.setToolTip("Wpisz to co chcesz powiedzieć kelnerce.")
         h_box = QtWidgets.QHBoxLayout()
         h_box.addWidget(self.isFemale) #kobieta
-        h_box.addWidget(self.isOrderComplete) #rachunek
+        h_box.addWidget(self.order) #rachunek
 
         main_box = QtWidgets.QHBoxLayout()
         main_box.addWidget(self.menulabel)
-        main_box.addWidget(self.imagelabel)
         main_box.addWidget(self.list)
 
         v_box = QtWidgets.QVBoxLayout()
@@ -63,15 +63,17 @@ class Window(QtWidgets.QWidget):
                   (resolution.height() / 2) - (self.frameSize().height() / 2))
 
         self.answer.setAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignBottom)
+        self.order.setAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignBottom)
         self.imagelabel.setAlignment(QtCore.Qt.AlignCenter)
         self.imagelabel.setPixmap(QtGui.QPixmap('kelner.png'))
-        self.menulabel.setPixmap(QtGui.QPixmap('menu.jpg'))
+        self.menulabel.setPixmap(QtGui.QPixmap('menu.png'))
         # print(screen_X)
 
         self.show()
 
     def btn_click(self):
-        sentence = self.textInput.text().replace("ą","a").replace("ć","c").replace("ę","e").replace("ł","l").replace("ń","n").replace("ó","o").replace("ś","s").replace("ż","z").replace("ź","z")
+        global rachunek
+        sentence = self.textInput.text().replace("ą","a").replace("ć","c").replace("ę","e").replace("ł","l").replace("ń","n").replace("ó","o").replace("ś","s").replace("ż","z").replace("ź","z").replace("schabowego","schabowy").replace("z frytkami","").replace("i buraczkami","")
         #sentence = ''.join( c for c in sentence if c not in 'ąćęłńóśżź')
         if debugMode:
             print("Question: " + sentence)
@@ -85,15 +87,19 @@ class Window(QtWidgets.QWidget):
         else:
             k.setPredicate("rachunek", "no")
         
-        response = k.respond(sentence.strip(",."))
-        if debugMode:
-            print(response)
-        self.answer.setText("Kelner: " + response)
+        if (k.getPredicate("rachunek") == "no"):
+            response = k.respond(sentence.strip(",."))
+            if debugMode:
+                print(response)
+            self.answer.setText("Kelner: " + response)
 
-        if (k.getPredicate("order") != ""):
-            self.list.addItem(k.getPredicate("order") + " - " + k.getPredicate("cena") + "zł")
-            k.setPredicate("order", "")
-            k.setPredicate("cena", "")
+            if (k.getPredicate("order") != ""):
+                self.list.addItem(k.getPredicate("order") + " - " + k.getPredicate("cena") + "zł")
+                rachunek += int(k.getPredicate("cena"))
+                k.setPredicate("order", "")
+                k.setPredicate("cena", "")
+                self.order.setText("Rachunek: " + str(rachunek) + "zł")
+
 
         app.processEvents()
         #if response:
@@ -121,6 +127,7 @@ k.setPredicate("plec", "m")
 k.setPredicate("hello", "n")
 k.setPredicate("napoj", "no")
 k.setPredicate("danie", "")
+k.setPredicate("rachunek","no")
 
 '''from bottle import route, run, static_file, view, url, template, request
 

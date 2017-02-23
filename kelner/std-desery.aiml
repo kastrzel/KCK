@@ -33,10 +33,11 @@
         <pattern>POLECDESER</pattern>
         <template>
             <random>
-            <li>Polecam sernik.<think><set name="deser">sernik</set><set name="danie">deser</set></think></li>
-            <li>Polecam lody.<think><set name="deser">lody</set><set name="danie">deser</set></think></li>
-            <li>Polecam ciasteczka.<think><set name="deser">ciasteczka</set><set name="danie">deser</set></think></li>
-            <li>Polecam szarlotkę.<think><set name="deser">szarlotka</set><set name="danie">deser</set></think></li>
+            <li>Tiramisu<think><set name="deser">tiramisu</set><set name="danie">deser</set></think></li>
+            <li>Deser lodowy z owocami<think><set name="deser">lody</set><set name="danie">deser</set></think></li>
+            <li>Szarlotka z bita śmietaną<think><set name="deser">szarlotka</set><set name="danie">deser</set></think></li>
+            <li>Sorbet truskawkowy<think><set name="deser">sorbet</set><set name="danie">deser</set></think></li>
+            <li>Gofry z owocami i polewa<think><set name="deser">gofry</set><set name="danie">deser</set></think></li>
             </random>
         </template>
     </category>

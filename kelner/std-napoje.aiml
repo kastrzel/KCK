@@ -38,11 +38,11 @@
         <template>
             <think><set name="picie"><star index="1"/></set></think>
             <condition name = "picie">
-               <li value="sok jablkowy"><set name="order">sok jabłkowy</set>, coś jeszcze?<think><set name="cena">4</set></think></li>
-               <li value="sok pomaranczowy"><set name="order">sok pomarańczowy</set>, coś jeszcze?<think><set name="cena">4</set></think></li>
-               <li value="napoj pepsi"><set name="order">napój pepsi</set>, coś jeszcze?<think><set name="cena">4</set></think></li>
-               <li value="woda mineralna"><set name="order">woda mineralna</set>, coś jeszcze?<think><set name="cena">4</set></think></li>
-			   <li value="napoj sprite"><set name="order">napój sprite</set>, coś jeszcze?<think><set name="cena">4</set></think></li>
+                <li value="sok jablkowy"><set name="order">Sok jabłkowy</set>, coś jeszcze?<think><set name="cena">5</set><set name="napoj">yes</set></think></li>
+                <li value="sok pomaranczowy"><set name="order">Sok pomarańczowy</set>, coś jeszcze?<think><set name="cena">5</set><set name="napoj">yes</set></think></li>
+                <li value="pepsi"><set name="order">Pepsi</set>, coś jeszcze?<think><set name="cena">6</set><set name="napoj">yes</set></think></li>
+                <li value="woda mineralna"><set name="order">Woda mineralna</set>, coś jeszcze?<think><set name="cena">4</set><set name="napoj">yes</set></think></li>
+			    <li value="fanta"><set name="order">Fanta</set>, coś jeszcze?<think><set name="cena">6</set><set name="napoj">yes</set></think></li>
             </condition>
         </template>
     </category>

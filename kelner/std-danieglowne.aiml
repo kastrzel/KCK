@@ -3,27 +3,29 @@
     <meta name="author" content="Yagira"/>
     <meta name="language" content="pl"/>
 
-
     <category>
-        <pattern>_ DANIE GLOWNE</pattern>   
-        <template><srai>DANIE GLOWNE</srai></template>
+    <pattern>_ DANIE GLOWNE * POLECA</pattern>
+    <template><srai>POLECDANIEGLOWNE</srai></template>
     </category>
 
     <category>
-        <pattern>_ DANIE GLOWNE *</pattern>
-        <template><srai>DANIE GLOWNE <star index="2"/></srai></template>
+    <pattern>_ DANIE GLOWNE * POLECI</pattern>
+    <template><srai>POLECDANIEGLOWNE</srai></template>
     </category>
 
     <category>
-        <pattern>DANIE GLOWNE</pattern>
-        <template>
-            <condition name = "plec" value = "m">
-                Na jakie danie główne ma Pan ochotę?
-            </condition>
-            <condition name = "plec" value = "k">
-                Na jakie danie główne ma Pani ochotę?
-            </condition>
-        </template>
+    <pattern>_ DANIE GLOWNE * POLECIC</pattern>
+    <template><srai>POLECDANIEGLOWNE</srai></template>
+    </category>
+
+    <category>
+    <pattern>POLECA * DANIE GLOWNE</pattern>
+    <template><srai>POLECDANIEGLOWNE</srai></template>
+    </category>
+
+    <category>
+    <pattern>POLECI * DANIE GLOWNE</pattern>
+    <template><srai>POLECDANIEGLOWNE</srai></template>
     </category>
 
     <category>

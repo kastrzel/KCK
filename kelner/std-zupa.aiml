@@ -4,6 +4,31 @@
     <meta name="language" content="pl"/>
 
     <category>
+    <pattern>_ ZUPE * POLECA</pattern>
+    <template><srai>POLECZUPE</srai></template>
+    </category>
+
+    <category>
+    <pattern>_ ZUPE * POLECI</pattern>
+    <template><srai>POLECZUPE</srai></template>
+    </category>
+
+    <category>
+    <pattern>_ ZUPE * POLECIC</pattern>
+    <template><srai>POLECZUPE</srai></template>
+    </category>
+
+    <category>
+    <pattern>POLECA * ZUPE</pattern>
+    <template><srai>POLECZUPE</srai></template>
+    </category>
+
+    <category>
+    <pattern>POLECI * ZUPE</pattern>
+    <template><srai>POLECZUPE</srai></template>
+    </category>
+
+    <category>
         <pattern>_ ZUPE</pattern>
         <template><srai>ZUPA</srai></template>
     </category>
@@ -41,11 +66,11 @@
         <template>
             <think><set name="zupa"><star index="1"/></set></think>
             <condition name = "zupa">
-               <li value="pomidorowa"><set name="order">Zupa pomidorowa</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
-               <li value="ogorkowa"><set name="order">Zupa ogórkowa</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
-               <li value="cebulowa"><set name="order">Zupa cebulowa</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
-               <li value="rosol"><set name="order">Rosół</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
-			   <li value="barszcz"><set name="order">Barszcz</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
+                <li value="pomidorowa"><set name="order">Pomidorowa z ryżem</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
+                <li value="ogorkowa"><set name="order">Ogórkowa z ziemniakami</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
+                <li value="cebulowa"><set name="order">Zupa cebulowa</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
+                <li value="rosol"><set name="order">Rosół z makaronem</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
+			    <li value="barszcz"><set name="order">Barszcz czerwony z pasztecikiem</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
             </condition>
         </template>
     </category>
@@ -60,11 +85,11 @@
         <pattern>POLECZUPE</pattern>
         <template>
             <random>
-            <li>Pomidorową<think><set name="zupa">pomidorowa</set><set name="danie">zupa</set></think></li>
-            <li>Ogórkową<think><set name="zupa">ogorkowa</set><set name="danie">zupa</set></think></li>
+            <li>Pomidorową z ryżem<think><set name="zupa">pomidorowa</set><set name="danie">zupa</set></think></li>
+            <li>Ogórkową z ziemniakami<think><set name="zupa">ogorkowa</set><set name="danie">zupa</set></think></li>
             <li>Cebulową<think><set name="zupa">cebulowa</set><set name="danie">zupa</set></think></li>
-            <li>Rosół<think><set name="zupa">rosoł</set><set name="danie">zupa</set></think></li>
-			<li>Barszcz<think><set name="zupa">barszcz</set><set name="danie">zupa</set></think></li>
+            <li>Rosół z makaronem<think><set name="zupa">rosol</set><set name="danie">zupa</set></think></li>
+			<li>Barszcz czerwony z pasztecikiem<think><set name="zupa">barszcz</set><set name="danie">zupa</set></think></li>
             </random>
         </template>
     </category>
