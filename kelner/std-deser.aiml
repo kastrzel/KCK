@@ -5,7 +5,7 @@
 
     <category>
         <pattern>_ DESER *</pattern>
-        <template><srai>DESER</srai></template>
+        <template><srai>DESER<star index="2"/></srai></template>
     </category>
 	<category>
         <pattern>_ DESER</pattern>
@@ -28,6 +28,21 @@
         </template>
     </category>
 
+	<category>
+        <pattern>DESER *</pattern>
+        <template>
+            <think><set name="deser"><star index="1"/></set></think>
+            <condition name = "deser">
+                <li value="tiramisu"><set name="order">Tiramisu</set>, coś jeszcze?<think><set name="cena">11</set></think></li>
+                <li value="lody"><set name="order">Deser lodowy z owocami</set>, coś jeszcze?<think><set name="cena">10</set></think></li>
+                <li value="szarlotka"><set name="order">Szarlotka na ciepło z bitą śmietaną</set>, coś jeszcze?<think><set name="cena">12</set></think></li>
+                <li value="sorbet"><set name="order">Sorbet truskawkowy</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
+                <li value="gofry"><set name="order">Gofry z owocami i polewą</set>, coś jeszcze?<think><set name="cena">9</set></think></li>
+            </condition>
+        </template>
+    </category>
+	
+	
 
     <category>
         <pattern>POLECDESER</pattern>
