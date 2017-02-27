@@ -66,14 +66,14 @@ class Window(QtWidgets.QWidget):
         self.order.setAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignBottom)
         self.imagelabel.setAlignment(QtCore.Qt.AlignCenter)
         self.imagelabel.setPixmap(QtGui.QPixmap('kelner.png'))
-        self.menulabel.setPixmap(QtGui.QPixmap('menu.png'))
+        self.menulabel.setPixmap(QtGui.QPixmap('menu.jpg'))
         # print(screen_X)
 
         self.show()
 
     def btn_click(self):
         global rachunek
-        sentence = self.textInput.text().replace("ą","a").replace("ć","c").replace("ę","e").replace("ł","l").replace("ń","n").replace("ó","o").replace("ś","s").replace("ż","z").replace("ź","z").replace("schabowego","schabowy").replace("z frytkami","").replace("i buraczkami","").replace("z ziemniakami","").replace("z kapusta kiszona","").replace("w sosie","").replace("pomidorowym z ryzem","").replace("z ryzem","").replace("z makaronem","").replace("czerwony","").replace("z pasztecikiem","").replace("z owocami","").replace("i polewa","").replace("na cieplo","").replace("z bita smietana","").replace("z salsa","").replace("z kurczakiem","").replace("fante","fanta").replace("z czarnej porzeczki","porzeczkowy")
+        sentence = self.textInput.text().replace("ą","a").replace("ć","c").replace("ę","e").replace("ł","l").replace("ń","n").replace("ó","o").replace("ś","s").replace("ż","z").replace("ź","z").replace("schabowego","schabowy").replace("z frytkami","").replace("i buraczkami","").replace("z ziemniakami","").replace("z kapusta kiszona","").replace("w sosie","").replace("pomidorowym z ryzem","").replace("z ryzem","").replace("z makaronem","").replace("czerwony","").replace("z pasztecikiem","").replace("z owocami","").replace("i polewa","").replace("na cieplo","").replace("z bita smietana","").replace("z salsa","").replace("z kurczakiem","").replace("fante","fanta").replace("z czarnej porzeczki","porzeczkowy").replace("wode","woda").replace("mineralna","")
         #sentence = ''.join( c for c in sentence if c not in 'ąćęłńóśżź')
         if debugMode:
             print("Question: " + sentence)

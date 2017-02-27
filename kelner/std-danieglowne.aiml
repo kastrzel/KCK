@@ -43,7 +43,7 @@
     <template><srai>POLECDANIEGLOWNE</srai></template>
     </category>
 
-    <category>
+    <category>x
         <pattern>*</pattern><that>NA JAKIE DANIE GŁÓWNE MA * OCHOTĘ</that>
         <template><srai>POPROSZE <star index="1"/></srai></template>
     </category>
