@@ -41,7 +41,7 @@
     </category>
 
     <category>
-    <pattern>NIE</pattern><that>COŚ DO PICIA</that>
+    <pattern>NIE</pattern><that>* COŚ DO PICIA</that>
     <template><think><set name = "napoj">yes</set><set name="rachunek">yes</set></think><srai>RACHUNEK</srai></template>
     </category>
 
@@ -116,7 +116,7 @@
                 <li value="szarlotka"><set name="order">Szarlotka na ciepło z bitą śmietaną</set>, coś jeszcze?<think><set name="cena">12</set></think></li>
                 <li value="sorbet truskawkowy"><set name="order">Sorbet truskawkowy</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
                 <li value="gofry"><set name="order">Gofry z owocami i polewą</set>, coś jeszcze?<think><set name="cena">9</set></think></li>
-				
+				<li value="rachunek"><think><set name="rachunek">yes</set></think><srai>RACHUNEK</srai></li>
                 <li>Nie mamy takiej pozycji w menu.</li>
             </condition>
         </template>

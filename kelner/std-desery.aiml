@@ -5,18 +5,72 @@
     <meta name="language" content="pl"/>
 
     <category>
-        <pattern>_ DESER *</pattern>
-        <template><srai>DESER</srai></template>
-    </category>
-	<category>
-        <pattern>_ DESER</pattern>
-        <template><srai>DESER</srai></template>
-    </category>
-	<category>
-        <pattern> DESER *</pattern>
-        <template><srai>DESER</srai></template>
+    <pattern>_ DESER * POLECA</pattern>
+    <template><srai>POLECDESER</srai></template>
     </category>
 
+    <category>
+    <pattern>_ DESER * POLECI</pattern>
+    <template><srai>POLECDESER</srai></template>
+    </category>
+
+    <category>
+    <pattern>_ DESER * POLECIC</pattern>
+    <template><srai>POLECDESER</srai></template>
+    </category>
+
+    <category>
+    <pattern>POLECA * DESER</pattern>
+    <template><srai>POLECDESER</srai></template>
+    </category>
+
+    <category>
+    <pattern>POLECI * DESER</pattern>
+    <template><srai>POLECDESER</srai></template>
+    </category>
+
+    <category>
+        <pattern>NA DESER NIECH BEDZIE *</pattern>
+        <template>
+                <srai>POPROSZE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ POPROSZE</pattern>
+        <template>
+                <srai>POPROSZE <star index="1"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ POPROSZE *</pattern>
+        <template>
+                <srai>POPROSZE <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ NA DESER POPROSZE *</pattern>
+        <template>
+                <srai>POPROSZE <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>NA DESER POPROSZE *</pattern>
+        <template>
+                <srai>POPROSZE <star index="2"/></srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>_ NA DESER POPROSZE *</pattern>
+        <template>
+                <srai>POPROSZE <star index="2"/></srai>
+        </template>
+    </category>
+    
     <category>
         <pattern>DESER</pattern>
         <template>
