@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aiml version="2.0">
+    <meta name="author" content="Yagira"/>
+    <meta name="language" content="pl"/>
+
+    <category>
+        <pattern>_ PRZYSTAWKE</pattern>
+        <template><srai>PRZYSTAWKA</srai></template>
+    </category>
+
+	<category>
+        <pattern>PRZYSTAWKE *</pattern>
+        <template><srai>PRZYSTAWKA</srai></template>
+    </category>
+
+    <category>
+        <pattern>PRZYSTAWKA</pattern>
+        <template>
+            <condition name = "plec" value = "m">
+                Na jaką przystawkę ma Pan ochotę?
+            </condition>
+            <condition name = "plec" value = "k">
+                Na jaką przystawkę ma Pani ochotę?
+            </condition>
+        </template>
+    </category>
+
+
+    <category>
+        <pattern>_ PRZYSTAWKE *</pattern>
+        <template><srai>ZUPA <star index="2"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>_ PRZYSTAWKA *</pattern>
+        <template><srai>PRZYSTAWKA <star index="2"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>*</pattern><that>NA JAKĄ PRZYSTAWKĘ MA * OCHOTĘ</that>
+        <template><srai>POPROSZE <star index="1"/></srai></template>
+    </category>
+
+    <category>
+        <pattern>POLECPRZYSTAWKE</pattern>
+        <template>
+            <random>
+            <li>Tatar z wołowiny<think><set name="przystawka">tatar z wolowiny</set><set name="danie">przystawka</set></think></li>
+            <li>Tatar z łososia<think><set name="przystawka">tatar z lososia</set><set name="danie">przystawka</set></think></li>
+            <li>Bruschetta z salsą<think><set name="przystawka">bruschetta</set><set name="danie">przystawka</set></think></li>
+            <li>Placki z cukinii<think><set name="przystawka">placki z cukinii</set><set name="danie">przystawka</set></think></li>
+			<li>Mini tortille z kurczakiem<think><set name="przystawka">mini tortille</set><set name="danie">przystawka</set></think></li>
+            </random>
+        </template>
+    </category>
+
+    
+    <category>
+    <pattern>_ POLECA</pattern><that>NA JAKĄ PRZYSTAWKĘ MA * OCHOTĘ</that>
+    <template><srai>POLECPRZYSTAWKE</srai></template>
+    </category>
+
+    <category>
+    <pattern>_ POLECI</pattern><that>NA JAKĄ PRZYSTAWKĘ MA * OCHOTĘ</that>
+    <template><srai>POLECPRZYSTAWKE</srai></template>
+    </category>
+
+    <category>
+    <pattern>_ POLECIC</pattern><that>NA JAKĄ PRZYSTAWKAĘ MA * OCHOTĘ</that>
+    <template><srai>POLECPRZYSTAWKE</srai></template>
+    </category>
+</aiml>

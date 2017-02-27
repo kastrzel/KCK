@@ -93,29 +93,38 @@
         <template>
             <think><set name="glowne"><star index="1"/></set></think>
             <condition name = "glowne">
-                <li value="schabowy"><set name="order">Schabowy z frytkami i buraczkami</set>, coś jeszcze?<think><set name="cena">17</set></think></li>
-                <li value="piers z kurczaka"><set name="order">Piers z kurczaka z ryżem i surówka</set>, coś jeszcze?<think><set name="cena">18</set></think></li>
-                <li value="golabki"><set name="order">Goląbki z ziemniakami</set>, coś jeszcze?<think><set name="cena">13</set></think></li>
-                <li value="kopytka"><set name="order">Kopytka z kapustą kiszoną</set>, coś jeszcze?<think><set name="cena">12</set></think></li>
-                <li value="klopsy"><set name="order">Klopsy w sosie pomidorowym z ryżem</set>, coś jeszcze?<think><set name="cena">15</set></think></li>
+                <li value="schabowy"><set name="order">Schabowy z frytkami i buraczkami</set>, coś jeszcze?<think><set name="cena">17</set><set name="rachunek">yes</set></think></li>
+                <li value="piers z kurczaka"><set name="order">Piers z kurczaka z ryżem i surówka</set>, coś jeszcze?<think><set name="cena">18</set><set name="rachunek">yes</set></think></li>
+                <li value="golabki"><set name="order">Goląbki z ziemniakami</set>, coś jeszcze?<think><set name="cena">13</set><set name="rachunek">yes</set></think></li>
+                <li value="kopytka"><set name="order">Kopytka z kapustą kiszoną</set>, coś jeszcze?<think><set name="cena">12</set><set name="rachunek">yes</set></think></li>
+                <li value="klopsy"><set name="order">Klopsy w sosie pomidorowym z ryżem</set>, coś jeszcze?<think><set name="cena">15</set><set name="rachunek">yes</set></think></li>
 
-                <li value="pomidorowa"><set name="order">Pomidorowa z ryżem</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
-                <li value="ogorkowa"><set name="order">Ogórkowa z ziemniakami</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
-                <li value="cebulowa"><set name="order">Zupa cebulowa</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
-                <li value="rosol"><set name="order">Rosół z makaronem</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
-			    <li value="barszcz"><set name="order">Barszcz czerwony z pasztecikiem</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
+                <li value="pomidorowa"><set name="order">Pomidorowa z ryżem</set>, coś jeszcze?<think><set name="cena">8</set><set name="rachunek">yes</set></think></li>
+                <li value="ogorkowa"><set name="order">Ogórkowa z ziemniakami</set>, coś jeszcze?<think><set name="cena">8</set><set name="rachunek">yes</set></think></li>
+                <li value="cebulowa"><set name="order">Zupa cebulowa</set>, coś jeszcze?<think><set name="cena">8</set><set name="rachunek">yes</set></think></li>
+                <li value="rosol"><set name="order">Rosół z makaronem</set>, coś jeszcze?<think><set name="cena">8</set><set name="rachunek">yes</set></think></li>
+			    <li value="barszcz"><set name="order">Barszcz czerwony z pasztecikiem</set>, coś jeszcze?<think><set name="cena">8</set><set name="rachunek">yes</set></think></li>
 
-                <li value="sok jablkowy"><set name="order">Sok jabłkowy</set>, coś jeszcze?<think><set name="cena">5</set><set name="napoj">yes</set></think></li>
-                <li value="sok pomaranczowy"><set name="order">Sok pomarańczowy</set>, coś jeszcze?<think><set name="cena">5</set><set name="napoj">yes</set></think></li>
-                <li value="pepsi"><set name="order">Pepsi</set>, coś jeszcze?<think><set name="cena">6</set><set name="napoj">yes</set></think></li>
-                <li value="woda mineralna"><set name="order">Woda mineralna</set>, coś jeszcze?<think><set name="cena">4</set><set name="napoj">yes</set></think></li>
-			    <li value="fanta"><set name="order">Fanta</set>, coś jeszcze?<think><set name="cena">6</set><set name="napoj">yes</set></think></li>
+                <li value="sok jablkowy"><set name="order">Sok jabłkowy</set>, coś jeszcze?<think><set name="cena">5</set><set name="napoj">yes</set><set name="rachunek">yes</set></think></li>
+                <li value="sok pomaranczowy"><set name="order">Sok pomarańczowy</set>, coś jeszcze?<think><set name="cena">5</set><set name="napoj">yes</set><set name="rachunek">yes</set></think></li>
+                <li value="sok porzeczkowy"><set name="order">Sok z czarnej porzeczki</set>, coś jeszcze?<think><set name="cena">5</set><set name="napoj">yes</set><set name="rachunek">yes</set></think></li>
+                <li value="pepsi"><set name="order">Pepsi</set>, coś jeszcze?<think><set name="cena">6</set><set name="napoj">yes</set><set name="rachunek">yes</set></think></li>
+                <li value="woda mineralna"><set name="order">Woda mineralna</set>, coś jeszcze?<think><set name="cena">4</set><set name="napoj">yes</set><set name="rachunek">yes</set></think></li>
+			    <li value="fanta"><set name="order">Fanta</set>, coś jeszcze?<think><set name="cena">6</set><set name="napoj">yes</set><set name="rachunek">yes</set></think></li>
+                <li value="sprite"><set name="order">Sprite</set>, coś jeszcze?<think><set name="cena">6</set><set name="napoj">yes</set><set name="rachunek">yes</set></think></li>
 				
 				<li value="tiramisu"><set name="order">Tiramisu</set>, coś jeszcze?<think><set name="cena">11</set></think></li>
-                <li value="deser lodowy"><set name="order">Deser lodowy z owocami</set>, coś jeszcze?<think><set name="cena">10</set></think></li>
-                <li value="szarlotka"><set name="order">Szarlotka na ciepło z bitą śmietaną</set>, coś jeszcze?<think><set name="cena">12</set></think></li>
-                <li value="sorbet truskawkowy"><set name="order">Sorbet truskawkowy</set>, coś jeszcze?<think><set name="cena">8</set></think></li>
-                <li value="gofry"><set name="order">Gofry z owocami i polewą</set>, coś jeszcze?<think><set name="cena">9</set></think></li>
+                <li value="deser lodowy"><set name="order">Deser lodowy z owocami</set>, coś jeszcze?<think><set name="cena">10</set><set name="rachunek">yes</set></think></li>
+                <li value="szarlotka"><set name="order">Szarlotka na ciepło z bitą śmietaną</set>, coś jeszcze?<think><set name="cena">12</set><set name="rachunek">yes</set></think></li>
+                <li value="sorbet truskawkowy"><set name="order">Sorbet truskawkowy</set>, coś jeszcze?<think><set name="cena">8</set><set name="rachunek">yes</set></think></li>
+                <li value="gofry"><set name="order">Gofry z owocami i polewą</set>, coś jeszcze?<think><set name="cena">9</set><set name="rachunek">yes</set></think></li>
+
+               <li value="tatar z wolowiny"><set name="order">Tatar z wołowiny</set>, coś jeszcze?<think><set name="cena">10</set></think></li>
+               <li value="tatar z lososia"><set name="order">Tatar z łososia</set>, coś jeszcze?<think><set name="cena">12</set></think></li>
+               <li value="bruschetta"><set name="order">Bruschetta z salsą</set>, coś jeszcze?<think><set name="cena">9</set></think></li>
+               <li value="placki z cukinii"><set name="order">Placki z cukinii</set>, coś jeszcze?<think><set name="cena">10</set></think></li>
+			   <li value="mini tortille"><set name="order">Mini tortille z kurczakiem</set>, coś jeszcze?<think><set name="cena">9</set></think></li>
+
 				<li value="rachunek"><think><set name="rachunek">yes</set></think><srai>RACHUNEK</srai></li>
                 <li>Nie mamy takiej pozycji w menu.</li>
             </condition>

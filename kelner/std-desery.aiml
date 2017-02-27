@@ -1,8 +1,24 @@
-
 <?xml version="1.0" encoding="utf-8"?>
 <aiml version="2.0">
     <meta name="author" content="Strzelecki"/>
     <meta name="language" content="pl"/>
+
+    <category>
+        <pattern>_ DESER</pattern>
+        <template><srai>JAKIDESER</srai></template>
+    </category>
+
+    <category>
+        <pattern>JAKIDESER</pattern>
+        <template>
+            <condition name = "plec" value = "m">
+				Jaki deser Pan sobie życzy?
+            </condition>
+            <condition name = "plec" value = "k">
+				Jaki deser Pani sobie życzy?
+            </condition>
+        </template>
+    </category>
 
     <category>
     <pattern>_ DESER * POLECA</pattern>
@@ -70,19 +86,6 @@
                 <srai>POPROSZE <star index="2"/></srai>
         </template>
     </category>
-    
-    <category>
-        <pattern>DESER</pattern>
-        <template>
-            <condition name = "plec" value = "m">
-				Jaki deser Pan sobie życzy?
-            </condition>
-            <condition name = "plec" value = "k">
-				Jaki deser Pani sobie życzy?
-            </condition>
-        </template>
-    </category>
-
 
     <category>
         <pattern>POLECDESER</pattern>
@@ -97,9 +100,23 @@
         </template>
     </category>
 
-    
-	<category>
+    <category>
+        <pattern>*</pattern><that>JAKI DESER * SOBIE ŻYCZY</that>
+        <template><srai>POPROSZE <star index="1"/></srai></template>
+    </category>
+
+    <category>
+    <pattern>_ POLECA</pattern><that>JAKI DESER * SOBIE ŻYCZY</that>
+    <template><srai>POLECDESER</srai></template>
+    </category>
+
+    <category>
+    <pattern>_ POLECI</pattern><that>JAKI DESER * SOBIE ŻYCZY</that>
+    <template><srai>POLECDESER</srai></template>
+    </category>
+
+    <category>
     <pattern>_ POLECIC</pattern><that>JAKI DESER * SOBIE ŻYCZY</that>
     <template><srai>POLECDESER</srai></template>
-    </category> 
+    </category>
 </aiml>

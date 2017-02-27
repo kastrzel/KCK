@@ -29,20 +29,6 @@
     </category>
 
     <category>
-        <pattern>DANIE GLOWNE *</pattern>
-        <template>
-            <think><set name="glowne"><star index="1"/></set></think>
-            <condition name = "glowne">
-                <li value="schabowy"><set name="order">Schabowy z frytkami i buraczkami</set>, coś jeszcze?<think><set name="cena">17</set></think></li>
-                <li value="piers z kurczaka"><set name="order">Piers z kurczaka z ryżem i surówka</set>, coś jeszcze?<think><set name="cena">18</set></think></li>
-                <li value="golabki"><set name="order">Goląbki z ziemniakami</set>, coś jeszcze?<think><set name="cena">13</set></think></li>
-                <li value="kopytka"><set name="order">Kopytka z kapustą kiszoną</set>, coś jeszcze?<think><set name="cena">12</set></think></li>
-                <li value="klopsy"><set name="order">Klopsy w sosie pomidorowym z ryżem</set>, coś jeszcze?<think><set name="cena">15</set></think></li>
-            </condition>
-        </template>
-    </category>
-
-    <category>
     <pattern>_ POLECA</pattern><that>NA JAKIE DANIE GŁÓWNE MA * OCHOTĘ</that>
     <template><srai>POLECDANIEGLOWNE</srai></template>
     </category>
@@ -59,7 +45,7 @@
 
     <category>
         <pattern>*</pattern><that>NA JAKIE DANIE GŁÓWNE MA * OCHOTĘ</that>
-        <template><srai>DANIE GLOWNE <star index="1"/></srai></template>
+        <template><srai>POPROSZE <star index="1"/></srai></template>
     </category>
 
     <category>

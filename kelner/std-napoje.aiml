@@ -24,16 +24,6 @@
     </category>
 
     <category>
-        <pattern>_ <set>picie</set></pattern>
-        <template><srai>PICIE <star index="2"/></srai></template>
-    </category>
-
-    <category>
-        <pattern><set>picie</set> *</pattern>
-        <template><srai>PICIE<star index="1"/></srai></template>
-    </category>
-
-    <category>
         <pattern>PICIE *</pattern>
         <template>
             <think><set name="picie"><star index="1"/></set></think>
@@ -52,5 +42,4 @@
         <template><srai>PICIE <star index="1"/></srai></template>
     </category>
 
- 
 </aiml>
