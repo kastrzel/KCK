@@ -87,7 +87,21 @@
                 <srai>POPROSZE <star index="2"/></srai>
         </template>
     </category>
+
+        <category>
+        <pattern>_ JESZCZE *</pattern>
+        <template>
+                <srai>POPROSZE <star index="2"/></srai>
+        </template>
+    </category>
     
+    <category>
+        <pattern>JESZCZE *</pattern>
+        <template>
+                <srai>POPROSZE <star index="2"/></srai>
+        </template>
+    </category>
+
     <category>
         <pattern>POPROSZE *</pattern>
         <template>

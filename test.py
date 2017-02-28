@@ -66,7 +66,7 @@ class Window(QtWidgets.QWidget):
         self.order.setAlignment(QtCore.Qt.AlignHCenter | QtCore.Qt.AlignBottom)
         self.imagelabel.setAlignment(QtCore.Qt.AlignCenter)
         self.imagelabel.setPixmap(QtGui.QPixmap('kelner.png'))
-        self.menulabel.setPixmap(QtGui.QPixmap('menu.jpg'))
+        self.menulabel.setPixmap(QtGui.QPixmap('menu.png'))
         # print(screen_X)
 
         self.show()
